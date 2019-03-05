@@ -1,0 +1,61 @@
+const mongoose = require('mongoose')    //引入Mongoose
+const Schema = mongoose.Schema          //声明Schema
+const mainSchema = new Schema({
+    
+        advertesPicture:{
+            PICTURE_ADDRESS:{type:String}
+        },
+        floor3:[{
+            goodsId:{type:String},
+            image:{type:String}
+        }],
+        floor2:[{
+            goodsId:{type:String},
+            image:{type:String}
+        }],
+        floor1:[{
+            goodsId:{type:String},
+            image:{type:String}
+        }],
+        floorName:{
+            floor3:{type:String},
+            floor2:{type:String},
+            floor1:{type:String}
+        },
+        category:[{
+            mallCategoryId:{type:Number},
+            mallCategoryName:{type:String},
+            bxMallSubDto:{
+                mallSubId:{type:String},
+                mallCategoryId:{type:Number},
+                mallSubName:{type:String},
+                comments:{type:String}
+            },
+            comments:{type:String},
+            image:{type:String}
+        }],
+        slides:[{
+            image:{type:String},
+            goodsId:{type:String}
+        }],
+        buyTime:{type:String},
+        hotGoods:[{
+            mallPrice:{type:Number},
+            image:{type:String},
+            goodsId:{type:String},
+            price:{type:Number},
+            name:{type:String}
+        }],
+        sendFee:{
+            chargeStartFee:{type:Number},
+            deliveryFee:{type:Number}
+        },
+        recommend:[{
+            image:{type:String},
+            mallPrice:{type:Number},
+            goodsId:{type:String},
+            price:{type:Number},
+            goodsName:{type:String}
+        }]
+})
+mongoose.model('Main',mainSchema)
